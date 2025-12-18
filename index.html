@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D模型查看器</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>3D模型查看器</h1>
+            <div class="controls-info">
+                <span>🖱️ 左键拖动旋转 | 🖱️ 右键拖动平移 | 🔍 滚轮缩放 | G键切换网格</span>
+            </div>
+        </header>
+        
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>正在加载3D模型...</p>
+        </div>
+        
+        <div id="canvas-container" class="canvas-container">
+            <canvas id="model-canvas"></canvas>
+        </div>
+        
+        <div class="toolbar">
+            <button id="reset-view" class="tool-btn">重置视角</button>
+            <button id="auto-rotate" class="tool-btn">自动旋转</button>
+            <button id="toggle-grid" class="tool-btn">隐藏网格</button>
+            <div class="zoom-controls">
+                <button id="zoom-in" class="zoom-btn">+</button>
+                <button id="zoom-out" class="zoom-btn">-</button>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            <p>使用Three.js和WebGL技术渲染 | 按G键切换网格显示</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
